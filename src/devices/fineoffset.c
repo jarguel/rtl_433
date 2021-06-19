@@ -199,6 +199,7 @@ The WH65B sends the same data with a slightly longer preamble and postamble
  */
 #define MODEL_WH24 24 /* internal identifier for model WH24, family code is always 0x24 */
 #define MODEL_WH65B 65 /* internal identifier for model WH65B, family code is always 0x24 */
+#define MODEL_WS69CN 69 /* internal identifier for model WS69CN, family code is always 0x24 */
 static int fineoffset_WH24_callback(r_device *decoder, bitbuffer_t *bitbuffer)
 {
     data_t *data;
@@ -227,8 +228,10 @@ static int fineoffset_WH24_callback(r_device *decoder, bitbuffer_t *bitbuffer)
             type = MODEL_WH24; // nominal 3 bits postamble
         else
             type = MODEL_WH65B;
-    else
-        type = MODEL_WH65B; // nominal 12 bits postamble
+    else {
+        //type = MODEL_WH65B; // nominal 12 bits postamble
+        type = MODEL_WS69CN; // nominal 12 bits postamble TODO: find the heuristic between WH65 and WS69
+    }
 
     bitbuffer_extract_bytes(bitbuffer, 0, bit_offset, b, sizeof(b) * 8);
 
@@ -269,6 +272,9 @@ static int fineoffset_WH24_callback(r_device *decoder, bitbuffer_t *bitbuffer)
     // Rain cup each count is 0.3mm for WH24, 0.01inch (0.254mm) for WH65B
     if (type == MODEL_WH24) { // WH24
         wind_speed_factor = 1.12f;
+        rain_cup_count = 0.3f;
+    } else if (type == MODEL_WS69CN) {
+        wind_speed_factor = 1.12f; //TODO don't know about this one
         rain_cup_count = 0.3f;
     } else { // WH65B
         wind_speed_factor = 0.51f;
