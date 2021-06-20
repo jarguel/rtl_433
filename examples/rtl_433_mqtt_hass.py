@@ -253,7 +253,7 @@ mappings = {
         "config": {
             "name": "Wind Average",
             "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
+            "value_template": "{{ (float(value|float) * 3.6) | round(2) }}"
         }
     },
 
@@ -283,7 +283,7 @@ mappings = {
         "config": {
             "name": "Wind max",
             "unit_of_measurement": "km/h",
-            "value_template": "{{ float(value|float) * 3.6 | round(2) }}"
+            "value_template": "{{ (float(value|float) * 3.6) | round(2) }}"
         }
     },
 
@@ -432,9 +432,31 @@ mappings = {
         }
     },
 
+    "light_lux": {
+        "device_type": "sensor",
+        "object_suffix": "lux",
+        "config": {
+            "device_class": "weather",
+            "name": "Outside Luminancee",
+            "unit_of_measurement": "lux",
+            "value_template": "{{ value|int }}"
+        }
+    },
+
     "uv": {
         "device_type": "sensor",
         "object_suffix": "uv",
+        "config": {
+            "device_class": "weather",
+            "name": "UV Index",
+            "unit_of_measurement": "UV Index",
+            "value_template": "{{ value|int }}"
+        }
+    },
+
+    "uvi": {
+        "device_type": "sensor",
+        "object_suffix": "uvi",
         "config": {
             "device_class": "weather",
             "name": "UV Index",
