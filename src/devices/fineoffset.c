@@ -313,7 +313,7 @@ static int fineoffset_WH24_callback(r_device *decoder, bitbuffer_t *bitbuffer)
 
     /* clang-format off */
     data = data_make(
-            "model",            "",                 DATA_STRING, type == MODEL_WH24 ? "Fineoffset-WH24" : "Fineoffset-WH65B",
+            "model",            "",                 DATA_STRING, type == MODEL_WH24 ? "Fineoffset-WH24" : type == MODEL_WS69CN ? "Fineoffset-WS69CN" : "Fineoffset-WH65B",
             "id",               "ID",               DATA_INT,    id,
             "battery_ok",       "Battery",          DATA_INT,    !low_battery,
             "temperature_C",    "Temperature",      DATA_COND, temp_raw != 0x7ff, DATA_FORMAT, "%.01f C", DATA_DOUBLE, temperature,
