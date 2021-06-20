@@ -226,8 +226,10 @@ static int fineoffset_WH24_callback(r_device *decoder, bitbuffer_t *bitbuffer)
     if (bitbuffer->bits_per_row[0] - bit_offset - sizeof(b) * 8 < 8)
         if (bit_offset < 61)
             type = MODEL_WH24; // nominal 3 bits postamble
-        else
-            type = MODEL_WH65B;
+        else {
+            //type = MODEL_WH65B; // nominal 12 bits postamble
+            type = MODEL_WS69CN; // nominal 12 bits postamble TODO: find the heuristic between WH65 and WS69
+        }
     else {
         //type = MODEL_WH65B; // nominal 12 bits postamble
         type = MODEL_WS69CN; // nominal 12 bits postamble TODO: find the heuristic between WH65 and WS69
