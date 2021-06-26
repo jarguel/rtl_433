@@ -426,7 +426,7 @@ mappings = {
         "object_suffix": "lux",
         "config": {
             "device_class": "weather",
-            "name": "Outside Luminancee",
+            "name": "Outside Luminance",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}"
         }
@@ -434,10 +434,10 @@ mappings = {
 
     "light_lux": {
         "device_type": "sensor",
-        "object_suffix": "lux",
+        "object_suffix": "lightlux",
         "config": {
             "device_class": "weather",
-            "name": "Outside Luminancee",
+            "name": "Outside Luminance",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}"
         }
@@ -449,7 +449,7 @@ mappings = {
         "config": {
             "device_class": "weather",
             "name": "UV Index",
-            "unit_of_measurement": "UV Index",
+            "unit_of_measurement": "UV Raw",
             "value_template": "{{ value|int }}"
         }
     },
