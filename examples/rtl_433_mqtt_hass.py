@@ -216,9 +216,10 @@ mappings = {
     },
 
     "wind_speed_km_h": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "WS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
@@ -226,10 +227,10 @@ mappings = {
     },
 
     "wind_avg_km_h": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "WS",
         "config": {
-            "device_class": "weather",
+            "device_class": "wind_speed",
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
@@ -237,10 +238,10 @@ mappings = {
     },
 
     "wind_avg_mi_h": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "WS",
         "config": {
-            "device_class": "weather",
+            "device_class": "wind_speed",
             "name": "Wind Speed",
             "unit_of_measurement": "mi/h",
             "value_template": "{{ value|float }}"
@@ -248,9 +249,10 @@ mappings = {
     },
 
     "wind_avg_m_s": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "WS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Wind Average",
             "unit_of_measurement": "km/h",
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}"
@@ -258,9 +260,10 @@ mappings = {
     },
 
     "wind_speed_m_s": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "WS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Wind Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ float(value|float) * 3.6 }}"
@@ -268,9 +271,10 @@ mappings = {
     },
 
     "gust_speed_km_h": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "GS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Gust Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ value|float }}"
@@ -278,9 +282,10 @@ mappings = {
     },
 
     "wind_max_m_s": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "GS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Wind max",
             "unit_of_measurement": "km/h",
             "value_template": "{{ (float(value|float) * 3.6) | round(2) }}"
@@ -288,9 +293,10 @@ mappings = {
     },
 
     "gust_speed_m_s": {
-        "device_type": "sensor",
+        "device_type": "weather",
         "object_suffix": "GS",
         "config": {
+            "device_class": "wind_speed",
             "name": "Gust Speed",
             "unit_of_measurement": "km/h",
             "value_template": "{{ float(value|float) * 3.6 }}"
@@ -425,7 +431,7 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "lux",
         "config": {
-            "device_class": "weather",
+            "device_class": "illuminance",
             "name": "Outside Luminance",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}"
@@ -436,7 +442,7 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "lightlux",
         "config": {
-            "device_class": "weather",
+            "device_class": "illuminance",
             "name": "Outside Luminance",
             "unit_of_measurement": "lux",
             "value_template": "{{ value|int }}"
@@ -447,7 +453,6 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "uv",
         "config": {
-            "device_class": "weather",
             "name": "UV Index",
             "unit_of_measurement": "UV Raw",
             "value_template": "{{ value|int }}"
@@ -458,7 +463,6 @@ mappings = {
         "device_type": "sensor",
         "object_suffix": "uvi",
         "config": {
-            "device_class": "weather",
             "name": "UV Index",
             "unit_of_measurement": "UV Index",
             "value_template": "{{ value|int }}"
