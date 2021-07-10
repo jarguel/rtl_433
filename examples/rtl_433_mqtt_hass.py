@@ -216,7 +216,7 @@ mappings = {
     },
 
     "wind_speed_km_h": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "WS",
         "config": {
             "device_class": "wind_speed",
@@ -227,7 +227,7 @@ mappings = {
     },
 
     "wind_avg_km_h": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "WS",
         "config": {
             "device_class": "wind_speed",
@@ -238,7 +238,7 @@ mappings = {
     },
 
     "wind_avg_mi_h": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "WS",
         "config": {
             "device_class": "wind_speed",
@@ -249,7 +249,7 @@ mappings = {
     },
 
     "wind_avg_m_s": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "WS",
         "config": {
             "device_class": "wind_speed",
@@ -260,7 +260,7 @@ mappings = {
     },
 
     "wind_speed_m_s": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "WS",
         "config": {
             "device_class": "wind_speed",
@@ -271,7 +271,7 @@ mappings = {
     },
 
     "gust_speed_km_h": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "GS",
         "config": {
             "device_class": "wind_speed",
@@ -282,7 +282,7 @@ mappings = {
     },
 
     "wind_max_m_s": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "GS",
         "config": {
             "device_class": "wind_speed",
@@ -293,7 +293,7 @@ mappings = {
     },
 
     "gust_speed_m_s": {
-        "device_type": "weather",
+        "device_type": "sensor",
         "object_suffix": "GS",
         "config": {
             "device_class": "wind_speed",
